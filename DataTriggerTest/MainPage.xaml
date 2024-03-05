@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTriggerTest.MainPage">
+
+    <Grid>
+        <Grid.Triggers>
+            <DataTrigger TargetType="Grid"
+                         Binding="{Binding IsPortrait}"
+                         Value="True">
+                <Setter Property="RowDefinitions"
+                        Value="*,*,*,*" />
+                <Setter Property="ColumnDefinitions"
+                        Value="*" />
+            </DataTrigger>
+            <DataTrigger TargetType="Grid"
+                         Binding="{Binding IsPortrait}"
+                         Value="False">
+                <Setter Property="RowDefinitions"
+                        Value="*,*" />
+                <Setter Property="ColumnDefinitions"
+                        Value="*,*" />
+            </DataTrigger>
+        </Grid.Triggers>
+        <Button Text="Cell 1">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="True">
+                    <Setter Property="Grid.Row"
+                            Value="0" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="False">
+                    <Setter Property="Grid.Row"
+                            Value="0" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Text="Cell 2">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="True">
+                    <Setter Property="Grid.Row"
+                            Value="1" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="False">
+                    <Setter Property="Grid.Row"
+                            Value="0" />
+                    <Setter Property="Grid.Column"
+                            Value="1" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Text="Cell 3">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="True">
+                    <Setter Property="Grid.Row"
+                            Value="2" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="False">
+                    <Setter Property="Grid.Row"
+                            Value="1" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Text="Cell 4">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="True">
+                    <Setter Property="Grid.Row"
+                            Value="3" />
+                    <Setter Property="Grid.Column"
+                            Value="0" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding IsPortrait}"
+                             Value="False">
+                    <Setter Property="Grid.Row"
+                            Value="1" />
+                    <Setter Property="Grid.Column"
+                            Value="1" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+
+</ContentPage>
